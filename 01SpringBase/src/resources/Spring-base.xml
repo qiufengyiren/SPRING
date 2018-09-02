@@ -4,6 +4,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -21,5 +23,72 @@
     <!--配置UserService的实现类-->
     <bean id="userService" class="com.dzq.service.UserServiceImpl">
         <property name="dao" ref="userDao"/>
+    </bean>
+
+
+    <!--验证bean的作用域
+    scope="singleton":默认就是单例 只实例化一次
+    prototype：原型 每次都会实例化一次-->
+    <!--实例一-->
+    <!--  <bean id="student" class="com.dzq.pojo.Student" scope="singleton">
+      </bean>
+  -->
+    <!--实例二-->
+    <!--<bean id="student" class="com.dzq.pojo.Student" p:stuid="1" p:stuName="小甜甜"></bean>-->
+
+
+    <!--实例三-->
+    <!-- <bean id="student" class="com.dzq.pojo.Student">
+        -通过构造的参数下标-->
+    <!-- <constructor-arg index="0" value="4"></constructor-arg>
+     <constructor-arg index="1" value="张林"></constructor-arg>-->
+    <!--通过构造的参数下标-->
+    <!--<constructor-arg name="stuid" value="2"></constructor-arg>
+    <constructor-arg name="stuName" value="张林"></constructor-arg>
+</bean>-->
+
+    <!--实例四-->
+    <!--换了个实体类Student1  不需要set方法   -->
+    <!--bean的属性赋值方式  构造注入 C命名-->
+    <bean id="student1" class="com.dzq.pojo.Student1" c:_0="1" c:_1="哦哦"/>
+    <bean id="student2" class="com.dzq.pojo.Student1" c:stuid="1" c:stuName="嗯呢"/>
+
+
+    <!--实例五-->
+
+    <bean id="teacher" class="com.dzq.pojo.Teacher">
+        <property name="teaid" value="1"/>
+        <property name="teaName" value="老师"/>
+    </bean>
+    <bean id="student" class="com.dzq.pojo.Student">
+        <property name="stuid" value="2"/>
+        <property name="stuName" value="小宝"/>
+        <property name="teacher" ref="teacher"/>
+        <property name="nums">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+            </map>
+        </property>
+        <property name="list">
+            <list>
+                <value>小黑</value>
+                <value>小白</value>
+                <value>小宝</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key1">value2</prop>
+            </props>
+        </property>
     </bean>
 </beans>
