@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/01SpringBase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02SpringJDBC" charset="UTF-8" />
   </component>
 </project>

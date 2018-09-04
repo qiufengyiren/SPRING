@@ -163,4 +163,34 @@ public class TestSpring {
         UserService service = (UserService) context.getBean(UserService.class);
         service.SaySpring();
     }
+
+    /**
+     * 使用注解完成自动装配
+     * 解析xml文件
+     * Spring-teacher.xml
+     */
+    @Test
+    public void test04() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Core.xml");
+        System.out.println("==============================");
+        //获取指定的对象
+        Student student = (Student) context.getBean(Student.class);
+        System.out.println(student.getTeacher());
+    }
+
+
+
+    /**
+     * 使用注解完成自动装配
+     * 解析xml文件
+     * Spring-teacher.xml
+     */
+    @Test
+    public void testCore() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("Spring-teacher.xml","Spring-student.xml");
+        System.out.println("==============================");
+        //获取指定的对象
+        Student student = (Student) context.getBean(Student.class);
+        System.out.println(student.getTeacher());
+    }
 }
