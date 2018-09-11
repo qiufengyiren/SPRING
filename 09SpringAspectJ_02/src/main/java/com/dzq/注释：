@@ -1,0 +1,33 @@
+AspectJ是一个面向切面的框架！ 定义了AOP的语法
+Spring将AspectJ整合到了自己的框架中
+ 需要引入的两个核心jar
+
+务必掌握的AspectJ的切入点表达式
+execution([访问权限类型] 返回值类型[完整限定类名]方法名（参数）[抛出的异常类型])
+execution(返回值类型 方法名（参数）)
+
+注释 字符的含义：
+*：0-N字符
+..:
+  01:如果是在方法参数中，表示参数可以有多个或者可无
+  02:如果是在包名之后，表示当前包和子类
++:
+  01:如果定义在类后面，表示当前类以及子类
+  02:如果定义在接口后面，表示当前接口以及实现类
+例子：
+execution(* add(..)) 所以以add开头的方法
+execution(* com.dzq.service.*.*(..)) service包中所有类中的所有方法
+execution(* com.dzq.service..*.*(..)) service包以及子包下所有类中的所有方法
+务必掌握的写法：
+1:execution(* *.service.*.*(..))一级包下的serice包中的所有的方法
+   com.dzq.service
+   com service   √
+2:execution(* *..service.*.*(..))所有包下面的serice包中的所有的方法
+   com.dzq.service
+   com service   √
+3:execution(* add(String,int))匹配所有包下面的add方法 并且参数列表必须是String和int
+4:execution(* add(java.util.List))匹配所有包下面的所有add方法  并且参数列表必须是List集合
+  注意：
+  如果我们想指定参数的类型！
+01:如果参数类型在java.lang下则不需要加包名
+02:其他类型的 务必加上包名==完整限定名

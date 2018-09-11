@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--01 配置数据源  使用jdbc自带的数据源-->
+    <!--  <bean id="dataSources" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+          <property name="driverClassName" value="${jdbc.driver}"></property>
+          <property name="url" value="${jdbc.url}"></property>
+          <property name="username" value="${jdbc.username}"></property>
+          <property name="password" value="${jdbc.password}"></property>
+      </bean>-->
+
+    <!--02 配置数据源  使用c3p0自带的数据源-->
+    <!--因为换了数据源的配置所以也要换name属性值 -->
+    <!--<bean id="dataSources" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>-->
+
+    <!--01 配置数据源  使用dbcp自带的数据源-->
+    <!--<bean id="dataSources" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>-->
+
+    <!--04 配置数据源  使用druid自带的数据源   推荐使用-->
+    <!--  <bean id="dataSources" class="com.alibaba.druid.pool.DruidDataSource">
+          <property name="driverClassName" value="${jdbc.driver}"></property>
+          <property name="url" value="${jdbc.url}"></property>
+          <property name="username" value="${jdbc.username}"></property>
+          <property name="password" value="${jdbc.password}"></property>
+      </bean>&ndash;&gt;-->
+    <!--01：配置目标对象 实际肯定是配置UserServiceImpl-->
+    <bean id="userDao" class="com.dzq.dao.UserDaoImpl"/>
+    <bean id="userDaoImpl" class="com.dzq.dao.UserDaoImpl"/>
+    <!--02：配置切面-->
+    <bean id="myAdvisor" class="com.dzq.annotation.MyAspectJ"/>
+    <!--03:注册aspectj的自动代理-->
+<aop:aspectj-autoproxy/>
+</beans>

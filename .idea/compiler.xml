@@ -8,11 +8,33 @@
         <outputRelativeToContentRoot value="true" />
         <module name="01SpringBase" />
         <module name="02SpringJDBC" />
+        <module name="03SpringProxy" />
+        <module name="04SpringAdvice" />
+        <module name="05SpringAdvice_2" />
+        <module name="06Springregular" />
+        <module name="07SpringProxyServer" />
+        <module name="08SpringAspectJ" />
+        <module name="09SpringAspectJ_02" />
+        <module name="10SpringAspectJ_03" />
+        <module name="11SpringAttrance" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="01SpringBase" target="1.7" />
       <module name="02SpringJDBC" target="1.7" />
+      <module name="03SpringProxy" target="1.7" />
+      <module name="04SpringAdvice" target="1.7" />
+      <module name="05SpringAdvice_2" target="1.7" />
+      <module name="06Springregular" target="1.7" />
+      <module name="07SpringAspectJ" target="1.7" />
+      <module name="07SpringProxyServer" target="1.7" />
+      <module name="08SpringAspectJ" target="1.7" />
+      <module name="09SpringAspectJ_02" target="1.7" />
+      <module name="10SpringAspectJ_03" target="1.7" />
+      <module name="11Spring" target="1.7" />
+      <module name="11SpringAffair" target="1.7" />
+      <module name="11SpringAttrance" target="1.7" />
+      <module name="_11Spring_Transaction" target="1.7" />
       <module name="SPRING" target="1.7" />
     </bytecodeTargetLevel>
   </component>

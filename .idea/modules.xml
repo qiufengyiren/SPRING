@@ -4,6 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/01SpringBase/01SpringBase.iml" filepath="$PROJECT_DIR$/01SpringBase/01SpringBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/02SpringJDBC/02SpringJDBC.iml" filepath="$PROJECT_DIR$/02SpringJDBC/02SpringJDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03SpringProxy/03SpringProxy.iml" filepath="$PROJECT_DIR$/03SpringProxy/03SpringProxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04SpringAdvice/04SpringAdvice.iml" filepath="$PROJECT_DIR$/04SpringAdvice/04SpringAdvice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05SpringAdvice_2/05SpringAdvice_2.iml" filepath="$PROJECT_DIR$/05SpringAdvice_2/05SpringAdvice_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06Springregular/06Springregular.iml" filepath="$PROJECT_DIR$/06Springregular/06Springregular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07SpringProxyServer/07SpringProxyServer.iml" filepath="$PROJECT_DIR$/07SpringProxyServer/07SpringProxyServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08SpringAspectJ/08SpringAspectJ.iml" filepath="$PROJECT_DIR$/08SpringAspectJ/08SpringAspectJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09SpringAspectJ_02/09SpringAspectJ_02.iml" filepath="$PROJECT_DIR$/09SpringAspectJ_02/09SpringAspectJ_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10SpringAspectJ_03/10SpringAspectJ_03.iml" filepath="$PROJECT_DIR$/10SpringAspectJ_03/10SpringAspectJ_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11SpringAttrance/11SpringAttrance.iml" filepath="$PROJECT_DIR$/11SpringAttrance/11SpringAttrance.iml" />
       <module fileurl="file://$PROJECT_DIR$/SPRING.iml" filepath="$PROJECT_DIR$/SPRING.iml" />
     </modules>
   </component>

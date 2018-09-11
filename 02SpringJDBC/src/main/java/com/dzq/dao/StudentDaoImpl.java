@@ -23,6 +23,7 @@ public class StudentDaoImpl extends JdbcDaoSupport implements StudentDao {
         return getJdbcTemplate().update(sql, student.getSname(), student.getAge());
 
     }
+
     /**
      * 删除
      * 调用update
@@ -34,6 +35,7 @@ public class StudentDaoImpl extends JdbcDaoSupport implements StudentDao {
         return getJdbcTemplate().update(sql, id);
 
     }
+
     /**
      * 修改
      * 调用update
@@ -44,6 +46,7 @@ public class StudentDaoImpl extends JdbcDaoSupport implements StudentDao {
         return getJdbcTemplate().update(sql, student.getSname(), student.getSid());
 
     }
+
     /**
      * 查询
      *
@@ -52,43 +55,43 @@ public class StudentDaoImpl extends JdbcDaoSupport implements StudentDao {
 
     @Override
     public List<Student> findAllList() {
-            String sql = "SELECT `sid`,`sname`,`age` FROM `student`";
+        String sql = "SELECT `sid`,`sname`,`age` FROM `student`";
+        /**
+         * 切记:
+         * 此处调用的是
+         * query
+         * 之前的增删改 调用的是update
+         */
+        return getJdbcTemplate().query(sql, new RowMapper<Student>() {
             /**
-             * 切记:
-             * 此处调用的是
-             * query
-             * 之前的增删改 调用的是update
+             * 方式一：
+             * StudentMapper就是为了测试查询写的一个实体类
+             * 直接在StudentMapper里面实现查询
+             * 然后编辑测试类
+             * 两种方式的测试类无需改动
              */
-            return getJdbcTemplate().query(sql, new RowMapper<Student>() {
-                /**
-                 * 方式一：
-                 * StudentMapper就是为了测试查询写的一个实体类
-                 * 直接在StudentMapper里面实现查询
-                 * 然后编辑测试类
-                 * 两种方式的测试类无需改动
-                 */
 
 
-                /**
-                 * 方式二
-                 * 将StudentMapper里面的代码拿到studentDaoImpl的实现方法里边
-                 * 写的是 sql, new RowMapper<Student>()
-                 * 测试类保持不变
-                 *方式二
-                 * sql, new RowMapper<Student>()
-                 * 此处要重写方法
-                 */
-                @Override
-                public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    System.out.println("=========================");
-                    Student student = new Student();
-                    student.setSid(rs.getInt("sid"));
-                    student.setSname(rs.getString("sname"));
-                    student.setAge(rs.getInt("age"));
-                    return student;
-                }
-            });
-        }
-
+            /**
+             * 方式二
+             * 将StudentMapper里面的代码拿到studentDaoImpl的实现方法里边
+             * 写的是 sql, new RowMapper<Student>()
+             * 测试类保持不变
+             *方式二
+             * sql, new RowMapper<Student>()
+             * 此处要重写方法
+             */
+            @Override
+            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+                System.out.println("=========================");
+                Student student = new Student();
+                student.setSid(rs.getInt("sid"));
+                student.setSname(rs.getString("sname"));
+                student.setAge(rs.getInt("age"));
+                return student;
+            }
+        });
     }
+
+}
 

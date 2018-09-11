@@ -1,9 +1,9 @@
 package com.dzq.pojo;
 
 public class Student {
-    private int sid;
-    private String sname;
-    private  int age;
+    private int sid;//id
+    private String sname;//姓名
+    private int age;//年龄
 
     public Student() {
     }

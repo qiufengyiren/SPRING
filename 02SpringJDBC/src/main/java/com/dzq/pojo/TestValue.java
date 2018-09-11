@@ -12,8 +12,8 @@ public class TestValue {
     @Value("jdbc.drive")*/
     /**
      * 方式二:
-     * @Value("${jdbc.driver}")
-     * 获取key
+     *
+     * @Value("${jdbc.driver}") 获取key
      */
     @Value("${jdbc.driver}")
     private String name;
